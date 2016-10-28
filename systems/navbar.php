@@ -20,7 +20,7 @@
 					<a href="#" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
-							<strong>Inventory System</strong>
+							<strong>SMITA (Sistem Informasi Manajemen Trijaya Excel Madura)</strong>
 						</small>
 					</a>
 				</div>

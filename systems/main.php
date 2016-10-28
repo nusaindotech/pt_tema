@@ -294,6 +294,22 @@ elseif ($_GET[hp]=='upload-dompul'){
   include "build/build-upload-dompul/upload-dompul.php";
 }
 
+elseif ($_GET[hp]=='upload-rekening'){
+  include "build/build-rekening-koran/upload-rekening.php";
+}
+
+elseif ($_GET[hp]=='list-rekening'){
+  include "build/build-rekening-koran/list-rekening.php";
+}
+
+elseif ($_GET[hp]=='list-rekening1'){
+  include "build/build-rekening-koran/list-rekening1.php";
+}
+
+elseif ($_GET[hp]=='list-rekening'){
+  include "build/build-rekening-koran/list-rekening3.php";
+}
+
 // Apabila modul tidak ditemukan
 else{
   include "build/build-notification/tampil-notification.php";

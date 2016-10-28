@@ -98,7 +98,7 @@
 												</tr>
 												</thead>
 												<tbody>
-												<?	 
+												<?php
 												include "auth/autho.php";
 													
 												$tampil=mysql_query("select * from tb_master_dompul");

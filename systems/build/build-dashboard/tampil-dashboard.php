@@ -135,7 +135,7 @@
 									<strong class="green">
 										<? echo "$_SESSION[nama_lengkap]"?>
 									</strong>,
-	Pada <strong class="green">Inventory System</strong>
+	Pada <strong class="green">SMITA (Sistem Informasi Manajemen Trijaya Excel Madura)</strong>
 		<small>(v1.0)</small>
 								</div>
 

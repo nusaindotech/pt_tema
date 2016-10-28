@@ -218,13 +218,13 @@
 							<b class="arrow"></b>
 							<ul class="submenu">
 							  
-							  <li class="">
+							  <!-- <li class="">
 									<a href="dash.php?hp=penjualan-dompul">
 										<i class="menu-icon fa fa-caret-right"></i>
 										Invoice Dompul
 									</a>
 									<b class="arrow"></b>
-								</li>
+								</li> -->
 							  <li class="">
 									<a href="dash.php?hp=penjualan-list-dompul">
 										<i class="menu-icon fa fa-caret-right"></i>
@@ -546,6 +546,30 @@
 							<a href="dash.php?hp=master-hpsubdompul">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Master HP Sub Dompul
+							</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text"> Rekening </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+							<a href="dash.php?hp=upload-rekening">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Upload Rekening
+							</a>
+								<b class="arrow"></b>
+							</li>
+                        	<li class="">
+							<a href="dash.php?hp=list-rekening">
+									<i class="menu-icon fa fa-caret-right"></i>
+									List Rekening
 							</a>
 								<b class="arrow"></b>
 							</li>
