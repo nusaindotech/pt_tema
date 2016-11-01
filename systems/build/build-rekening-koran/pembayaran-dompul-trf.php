@@ -363,8 +363,6 @@
 						<h4 class="modal-title">Daftar Rekening Koran</h4>
 						</div>
 						<div class="modal-body" id="daftar-rekening-koran">
-						<form action="dash.php?hp=pembayaran-dompul-trf" method="POST">
-						</form>
 						</div>
 						<div class="modal-footer">
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>

@@ -310,6 +310,10 @@ elseif ($_GET[hp]=='list-rekening'){
   include "build/build-rekening-koran/list-rekening3.php";
 }
 
+elseif ($_GET[hp]=='pembayaran-dompul-trf'){
+  include "build/build-rekening-koran/pembayaran-dompul-trf.php";
+}
+
 // Apabila modul tidak ditemukan
 else{
   include "build/build-notification/tampil-notification.php";
