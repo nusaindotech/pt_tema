@@ -3,6 +3,8 @@
 if (isset($_POST['tanggal_input'])) {
 	
 	include "../../../auth/autho.php";
+	session_start();
+	$_SESSION['id_bo'];
 
 	$output = 'Upload Tanggal '.$_POST["tanggal_input"].'';
 	$no = 1;
@@ -24,20 +26,70 @@ if (isset($_POST['tanggal_input'])) {
 	while ($row = mysql_fetch_array($query1)) {
 		$output .= '
 			<tr>
+				<form action="build/build-penjualan-dompul/tambah-penjualan-dompul3.php" method="POST">
 				<td>'.$no.'</td>
 				<td data-date-format="yyyy-mm-dd">'.$row[1].'</td>
 				<td>'.$row[2].'</td>
 				<td>'.$row[3].'</td>
 				<td>'.$row[4].'</td>
-				<td><input type="checkbox" name="check_list[]" value="value 1"></td>
+				<td><input type="checkbox" class="giftsRosesCheckBox" name="cekku[]" value="'.$row['nominal'].'"></td>
+				
 			</tr>
 
 		';
 		$no++;
 	}
-	$output .="</table></div>";
+	$output .='</table></div>
+	<div class="modal-footer">
+				<button type="submit" class="btn btn-danger" data-dismiss="modal">Simpan</button>
+				</form>';
 	echo $output;
-	var_dump($_POST['tanggal_input']);
+?>
 
+
+	<script type='text/javascript'>
+        $('button').bind('click', function (e) {
+            var total = 0;
+            $(':checkbox:checked.giftsRosesCheckBox').each(function () {
+                total += +this.value;
+            });
+            alert(total);
+
+            $.ajax({
+				url:"build/build-penjualan-dompul/tambah-penjualan-dompul3.php",
+				type: "POST",
+				data:{total:total},
+				success:function (data) {
+					$('#jumlahtransfer').html(total);
+					console.log(data); // cek data NULL
+				}
+			});
+        });
+
+    // $(".cb").click(function(){
+
+    //     var values = new Array();
+    //     $.each($("input[name='check_box[]']:checked"), function() {
+    //       values.push($(this).val());
+
+    //     });
+
+    //     //alert(values);
+
+    //     $.ajax({url: "build/build-penjualan-dompul/tambah-penjualan-dompul3.php", 
+    //     type:'POST',
+    //     data:{ 'cbs':values},
+    //     success: function(result){
+
+    //          resp = JSON.parse(result);
+
+    //          alert(resp.sum)
+
+    //     }
+
+    //     });
+    // });
+    </script>
+<?php
 }
 ?>

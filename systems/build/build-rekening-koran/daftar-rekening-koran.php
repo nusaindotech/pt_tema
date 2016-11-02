@@ -57,8 +57,7 @@
 				<div class="modal-body" id="detail_rekening1">
 				
 				</div>
-				<div class="modal-footer">
-				<button type="submit" class="btn btn-danger" data-dismiss="modal">Simpan</button>
+				
 				</div>
 			</div>
 		</div>

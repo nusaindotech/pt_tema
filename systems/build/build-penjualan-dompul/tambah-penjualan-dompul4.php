@@ -145,19 +145,20 @@
 											<tr>
 											  <td><div align="center"><?php echo $no;?></div></td>
 											  <td class="info" align="center">
-											  <a href="dash.php?hp=penjualan-dompul3&tanggal_input=<?php echo $tanggal_input; ?>&hp_kios=<?php echo $row3['hp_kios']; ?>&hp_sales=<?php echo $canvaser; ?>" >
-											  <?php
-											  if($row3['nama_kios']=='')
-											  {
-												  echo "Unnamed";
-											  }
-											  else
-											  {
-												echo $row3['nama_kios'];  
-											  }
-											  
-											  ?>
-											  </a></td>
+												  <a href="dash.php?hp=penjualan-dompul3&tanggal_input=<?php echo $tanggal_input; ?>&hp_kios=<?php echo $row3['hp_kios']; ?>&hp_sales=<?php echo $canvaser; ?>" >
+												  <?php
+												  if($row3['nama_kios']=='')
+												  {
+													  echo "Unnamed";
+												  }
+												  else
+												  {
+													echo $row3['nama_kios'];  
+												  }
+												  
+												  ?>
+												  </a>
+											  </td>
 											  <td align="center"><?php echo $row5['tot'];?></td>
 											  </tr>
 											<tr>

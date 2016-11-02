@@ -2,6 +2,7 @@
 	$hp_kios		=$_GET['hp_kios'];
 	$hp_sales		=$_GET['hp_sales'];
 	$tanggal_input	=$_GET['tanggal_input'];
+	$total = $_POST['total'];
 
 	$a2=mysql_query("SELECT nama_kios from tb_upload_dompul where hp_kios='$hp_kios'");
 	$row2=mysql_fetch_array($a2);
@@ -268,7 +269,7 @@
 											  <td colspan="2"><strong>Jumlah Transfer</strong></td>
 											  <td>&nbsp;</td>
 											  <td><strong>
-											    <input name="jumlahtransfer3" type="text" id="jumlahtransfer" autocomplete="off"/>
+											    <input name="jumlahtransfer3" type="text" id="jumlahtransfer"  autocomplete="off"><?php var_dump($_POST[$total])?></input>
 											  </strong></td>
 											  <td>&nbsp;</td>
 											  </tr>
