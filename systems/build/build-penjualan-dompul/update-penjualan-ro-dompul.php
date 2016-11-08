@@ -15,7 +15,10 @@
 	$jumlahtransfer2	= $_POST['jumlahtransfer2'];	
 	$jumlahtransfer3	= $_POST['jumlahtransfer3'];	
 	$catatan 			= $_POST['catatan'];				
-	$tanggal_input 		= $_POST['tanggal_input'];				
+	$tanggal_input 		= $_POST['tanggal_input'];
+
+	$status 			= $_POST['status'];
+	$id_rekening = $_POST['id_rekening'];
 	
 	$tglsekarang = date('Y-m-d');
 	
@@ -173,6 +176,14 @@
 		mysql_query($query2) or die("Gagal menyimpan data Penjualan Dompul");
 		mysql_query($query3) or die("Gagal update data Penjualan Dompul");
 	}
+
+	$queryrek ="UPDATE `tb_upload_rekening` SET 
+	`no_user`='$id_bo',
+	`tanggal_pengakuan`='$tglsekarang',
+	`isstatus`='1'
+	WHERE `id_rekening`='$id_rekening'";
+
+	mysql_query($queryrek) or die("Gagal menyimpan data Rekening");
 		
 	header("location:../../dash.php?hp=penjualan-dompul4&canvaser=$hp_sales&tanggal_input=$tanggal_input");
 ?>

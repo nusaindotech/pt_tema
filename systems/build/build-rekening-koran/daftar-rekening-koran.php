@@ -1,4 +1,8 @@
 <?php
+
+	// $hp_kios		=$_POST['hp_kios'];
+	// $hp_sales		=$_POST['hp_sales'];
+	// $tanggal_input	=$_POST['tanggal_input'];
 	
 	include "../../../auth/autho.php";
 
@@ -8,6 +12,13 @@
 	$query1 = mysql_query("select tb_upload_rekening.id_rekening, tb_upload_rekening.tanggal, tb_bank.nama_bank, tb_upload_rekening.keterangan, tb_upload_rekening.nominal, tb_upload_rekening.pengakuan  from tb_bank inner join tb_upload_rekening on tb_bank.id_bank = tb_upload_rekening.id_bank WHERE tanggal_input");
 	?>
 	<div class="table-responsive">
+	<!-- <form action="build-pop-detail_rekening.php" method="post" name="myform">
+...
+<input type="submit" name="subpopup" value="Submit in Popup" 
+   onclick="myform.target='POPUPW'; POPUPW = window.open(
+   'about:blank','POPUPW','width=600,height=400');">
+<input type="submit" name="subnormal" value="Submit Normal">
+</form> -->
 		<table class="table table-bordered">
 		<thead>
 			<tr>
@@ -34,6 +45,8 @@
 			$('.view_data1').bind('click', function (e) {
 				console.log('.view_data1');
 				var tanggal_input = $(this).text();
+				$('.view_data1').val(tanggal_input)
+				// PopupCenter('build-pop/detail_rekening.php');
 
 				$.ajax({
 					url:"build/build-rekening-koran/detail-rekening1.php",
@@ -62,3 +75,4 @@
 			</div>
 		</div>
 	</div>
+	

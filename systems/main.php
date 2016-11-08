@@ -314,6 +314,10 @@ elseif ($_GET[hp]=='pembayaran-dompul-trf'){
   include "build/build-rekening-koran/pembayaran-dompul-trf.php";
 }
 
+elseif ($_GET[hp]=='checkout-dompul'){
+  include "build/build-penjualan-dompul/tambah-penjualan-dompul33.php";
+}
+
 // Apabila modul tidak ditemukan
 else{
   include "build/build-notification/tampil-notification.php";

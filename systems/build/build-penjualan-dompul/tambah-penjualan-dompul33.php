@@ -1,7 +1,19 @@
 <?php
-	$hp_kios		=$_GET['hp_kios'];
-	$hp_sales		=$_GET['hp_sales'];
-	$tanggal_input	=$_GET['tanggal_input'];
+	$hp_kios		=$_POST['hp_kios'];
+	$hp_sales		=$_POST['hp_sales'];
+	$tanggal_input	=$_POST['tanggal_input'];
+	$total = $_POST['total'];
+
+	 $namabank  = $_POST['cekku'];
+ //$totalBank   = sizeof($namabank);
+
+ //for($i=0;$i<$totalBank;$i++) 
+ for($i=0;$i<2;$i++) 
+ {
+  $namabank1 = $namabank[0];
+  $namabank2 = $namabank[1];
+  $namabank3 = $namabank[2];
+ }
 
 	$a2=mysql_query("SELECT nama_kios from tb_upload_dompul where hp_kios='$hp_kios'");
 	$row2=mysql_fetch_array($a2);
@@ -268,7 +280,7 @@
 											  <td colspan="2"><strong>Jumlah Transfer</strong></td>
 											  <td>&nbsp;</td>
 											  <td><strong>
-											    <input name="jumlahtransfer3" type="text" id="jumlahtransfer" autocomplete="off"/>
+											    <input name="jumlahtransfer3" type="text" id="jumlahtransfer22"  autocomplete="off"><?php var_dump($_POST)?></input>
 											  </strong></td>
 											  <td>&nbsp;</td>
 											  </tr>
@@ -363,6 +375,8 @@
 						<h4 class="modal-title">Daftar Rekening Koran</h4>
 						</div>
 						<div class="modal-body" id="daftar-rekening-koran">
+						<form action="dash.php?hp=pembayaran-dompul-trf" method="POST">
+						</form>
 						</div>
 						<div class="modal-footer">
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>

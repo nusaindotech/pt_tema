@@ -11,6 +11,9 @@
 	$jumlahtransfer3	=$_POST['jumlahtransfer3'];
 	$catatan			=$_POST['catatan'];
 
+	$status 			=$_POST['status'];
+	$id_rekening		=$_POST['id_rekening'];
+
 	$a2=mysql_query("SELECT nama_kios from tb_upload_dompul where hp_kios='$hp_kios'");
 	$row2=mysql_fetch_array($a2);
 	
@@ -242,6 +245,8 @@
 										      <td>&nbsp;</td>
 										      <td><strong>
                                               <input name="jumlahtransfer" type="text" id="jumlahtransfer" value="<?php echo $jumlahtransfer; ?>" readonly/>
+                                              <input name="status" type="hidden" value="<?php echo $status; ?>" />
+											    <input name="id_rekening" type="hidden" value="<?php echo $id_rekening; ?>"/>
                                             </strong></td>
 											  </tr>
 											<tr>

@@ -8,7 +8,7 @@ if (isset($_POST['tanggal_input'])) {
 	$no = 1;
 	$query = mysql_query("SELECT * FROM tb_upload_rekening WHERE tanggal_input = '".$_POST["tanggal_input"]."' ");
 	$query1 = mysql_query("select tb_upload_rekening.id_rekening, tb_upload_rekening.tanggal, tb_bank.nama_bank, tb_upload_rekening.keterangan, tb_upload_rekening.nominal, tb_upload_rekening.pengakuan  from tb_bank inner join tb_upload_rekening on tb_bank.id_bank = tb_upload_rekening.id_bank WHERE tanggal_input = '".$_POST["tanggal_input"]."'");
-	$query2 = mysql_query("select tb_upload_rekening.id_rekening, tb_upload_rekening.tanggal, tb_bank.nama_bank, tb_upload_rekening.keterangan, tb_upload_rekening.nominal, users.nama_lengkap from tb_upload_rekening join tb_bank on tb_upload_rekening.id_bank = tb_bank.id_bank JOIN users on tb_upload_rekening.No_User = users.No_User WHERE tanggal_input = '".$_POST["tanggal_input"]."'");
+	$query2 = mysql_query("SELECT * FROM tb_bank a, tb_upload_rekening b, users c WHERE a.id_bank = b.id_bank AND c.no_user = b.no_user AND b.tanggal_input = '".$_POST["tanggal_input"]."'");
 	$output .= '<div class="table-responsive">
 					<table class="table table-bordered">
 					<thead>
@@ -26,11 +26,11 @@ if (isset($_POST['tanggal_input'])) {
 		$output .= '
 			<tr>
 				<td>'.$no.'</td>
-				<td data-date-format="yyyy-mm-dd">'.$row[1].'</td>
-				<td>'.$row[2].'</td>
-				<td>'.$row[3].'</td>
-				<td>'.$row[4].'</td>
-				<td>'.$row[5].'</td>
+				<td data-date-format="yyyy-mm-dd">'.$row['tanggal'].'</td>
+				<td>'.$row['nama_bank'].'</td>
+				<td>'.$row['keterangan'].'</td>
+				<td>'.$row['nominal'].'</td>
+				<td>'.$row['nama_lengkap'].'</td>
 			</tr>
 
 		';

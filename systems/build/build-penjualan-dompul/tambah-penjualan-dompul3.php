@@ -1,8 +1,11 @@
-<?php
+s<?php
 	$hp_kios		=$_GET['hp_kios'];
 	$hp_sales		=$_GET['hp_sales'];
 	$tanggal_input	=$_GET['tanggal_input'];
 	$total = $_POST['total'];
+	$banktrans = $_POST['valuetwo'];
+	$status = $_POST['valuethree'];
+	$id_rekening = $_POST['id_rekening'];
 
 	$a2=mysql_query("SELECT nama_kios from tb_upload_dompul where hp_kios='$hp_kios'");
 	$row2=mysql_fetch_array($a2);
@@ -269,7 +272,10 @@
 											  <td colspan="2"><strong>Jumlah Transfer</strong></td>
 											  <td>&nbsp;</td>
 											  <td><strong>
-											    <input name="jumlahtransfer3" type="text" id="jumlahtransfer"  autocomplete="off"><?php var_dump($_POST[$total])?></input>
+											  	<input name="idbank" type="hidden" value="<?php echo $_POST["banktrans"]?>" id="idbank" />
+											    <input name="jumlahtransfer" type="text" value="<?php echo $_POST["total"]?>" id="jumlahtransfer" />
+											    <input name="status" type="hidden" value="<?php echo $_POST["status"]?>" id="status" />
+											    <input name="id_rekening" type="hidden" value="<?php echo $_POST["id_rekening"]?>" id="id_rekening" />
 											  </strong></td>
 											  <td>&nbsp;</td>
 											  </tr>

@@ -8,7 +8,7 @@
 	$tglsekarang = date('Y-m-d');
 
 	$a2=mysql_query("SELECT * from tb_sales where hp_sales='$canvaser'");
-	$row2=mysql_fetch_array($a2);	
+	$row2=mysql_fetch_array($a2);
 ?>
 <!-- /.modal -->
 
