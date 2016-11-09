@@ -67,17 +67,30 @@ if (isset($_POST['tanggal_input'])) {
 	}).get();
         $('button').bind('click', function (e) {
             var total = 0;
-            var bank = $('input[name="cekku[]"]').val($('input[name="cekku[]"]')).attr('data-valuetwo');
-            var status = $('input[name="cekku[]"]').val($('input[name="cekku[]"]')).attr('data-valuethree');
-            var id_rekening = $('input[name="cekku[]"]').val($('input[name="cekku[]"]')).attr('data-valuefour');
+            var bank;
+            var status;
+            var id_rekening;
+            // var bank = $('input[name="cekku[]"]').val($('input[name="cekku[]"]')).attr('data-valuetwo');
+            // var status = $('input[name="cekku[]"]').val($('input[name="cekku[]"]')).attr('data-valuethree');
+            // var id_rekening = $('input[name="cekku[]"]').val($('input[name="cekku[]"]')).attr('data-valuefour');
             $(':checkbox:checked.giftsRosesCheckBox').each(function () {
-                total += +this.value;
+                total += $(this).val();
+                bank = $(this).data('valuetwo');
+                status = $(this).data('valuethree');
+                id_rekening = $(this).data('valuefour');
                 
+
+    //             bank = $('input[name="cekku[]"]').map(function(){
+				// 	return $(this).data('valuetwo');
+				// }).get();
+				alert(bank);
+				console.log(status);
+
+				
+				console.log(id_rekening);
             });
+
             alert(total);
-            alert(bank);
-            alert(status);
-            alert(id_rekening);
 
             $.ajax({
 				url:"build/build-penjualan-dompul/tambah-penjualan-dompul3.php",

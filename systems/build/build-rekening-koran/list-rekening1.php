@@ -1,5 +1,7 @@
 <?php
 	$tanggal_awal	= $_POST['tanggal_awal'];
+	$id_rekening = $_POST['id_rekening'];
+
 ?>
 <!-- #section:basics/content.breadcrumbs -->
 					<div class="breadcrumbs" id="breadcrumbs">
@@ -114,3 +116,5 @@
 							var targetWin = window.open (pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
 							}
 					    </script>
+
+					 	

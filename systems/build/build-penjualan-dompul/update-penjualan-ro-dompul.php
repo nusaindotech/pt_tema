@@ -1,7 +1,7 @@
 <?php
 	include "../../../auth/autho.php";
 	
-	$No_User			= $_POST['id_bo'];
+	$No_User			= $_POST['No_User'];
 	$id_bo				= $_POST['id_bo'];
 	$id_ho				= $_POST['id_ho'];
 	$hp_kios			= $_POST['hp_kios'];    			
@@ -175,15 +175,18 @@
 				   
 		mysql_query($query2) or die("Gagal menyimpan data Penjualan Dompul");
 		mysql_query($query3) or die("Gagal update data Penjualan Dompul");
+
+		$queryrek ="UPDATE `tb_upload_rekening` SET 
+		`no_user`='$No_User',
+		`tanggal_pengakuan`='$tglsekarang',
+		`isstatus`='1',
+		'id_penjualan_dompul' = '$row2[no_upload_dompul]'
+		WHERE `id_rekening`='$id_rekening'";
+
+		mysql_query($queryrek) or die("Gagal menyimpan data Rekening");
 	}
 
-	$queryrek ="UPDATE `tb_upload_rekening` SET 
-	`no_user`='$id_bo',
-	`tanggal_pengakuan`='$tglsekarang',
-	`isstatus`='1'
-	WHERE `id_rekening`='$id_rekening'";
-
-	mysql_query($queryrek) or die("Gagal menyimpan data Rekening");
+	
 		
 	header("location:../../dash.php?hp=penjualan-dompul4&canvaser=$hp_sales&tanggal_input=$tanggal_input");
 ?>
